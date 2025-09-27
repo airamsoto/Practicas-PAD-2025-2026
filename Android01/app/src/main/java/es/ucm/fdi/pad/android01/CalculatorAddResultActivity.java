@@ -17,7 +17,7 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class CalculatorAddResultActivity extends AppCompatActivity {
 
-    EditText resultadoText;
+    TextView resultadoText;
     Button volver;
 
     @Override
@@ -26,7 +26,7 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_calculator_add_result);
 
-        volver = (Button) findViewById(R.id.button2);
+        volver = (Button) findViewById(R.id.buttonBack);
         volver.setOnClickListener(view -> {
             Intent intent = new Intent(this, MainActivity.class);
             startActivity(intent);
@@ -36,8 +36,8 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
         String decimal1 = intent.getStringExtra("decimal1");
         String decimal2 = intent.getStringExtra("decimal2");
 
-        TextView var1 = (EditText) findViewById(R.id.editTextNumberDecimal3);
-        TextView var2 = (EditText) findViewById(R.id.editTextNumberDecimal4);
+        TextView var1 = findViewById(R.id.textViewNumber1);
+        TextView var2 = findViewById(R.id.textViewNumber2);
 
         var1.setText(decimal1);
         var2.setText(decimal2);
@@ -45,9 +45,9 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
         double resultado = CalculatorAdd.add(Double.parseDouble(decimal1), Double.parseDouble(decimal2));
         Log.i(TAG, "Suma realizada"); //para eventos importantes como esta suma
 
-        resultadoText = (EditText) findViewById(R.id.editTextNumberDecimal5);
+        resultadoText = findViewById(R.id.textViewResult);
 
-        resultadoText.setText(String.valueOf(resultado));
+        resultadoText.setText(String.format("Resultado: %s", String.valueOf(resultado)));
 
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
