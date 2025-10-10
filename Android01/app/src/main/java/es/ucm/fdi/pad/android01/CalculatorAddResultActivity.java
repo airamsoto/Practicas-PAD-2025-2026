@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -42,6 +41,8 @@ public class CalculatorAddResultActivity extends AppCompatActivity {
         var1.setText(decimal1);
         var2.setText(decimal2);
 
+        assert decimal1 != null;
+        assert decimal2 != null;
         double resultado = CalculatorAdd.add(Double.parseDouble(decimal1), Double.parseDouble(decimal2));
         Log.i(TAG, "Suma realizada"); //para eventos importantes como esta suma
 
