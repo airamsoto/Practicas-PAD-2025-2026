@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_image"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/editTextTitulo"
+        android:layout_marginTop="25dp"
+        android:autofillHints=""
+        android:hint="@string/titulo_string"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        style="@style/EditTextStyle" />
+
+    <EditText
+        android:id="@+id/editTextAutor"
+        android:autofillHints=""
+        android:hint="@string/autor_string"
+        app:layout_constraintEnd_toStartOf="@+id/imageButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editTextTitulo"
+        style="@style/EditTextStyle"/>
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="0dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageButton">
+
+        <RadioButton
+            android:id="@+id/radioButtonLibro"
+            android:text="@string/libro_string"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="230dp"
+            style="@style/RadioButtonStyle"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonRevista"
+            android:text="@string/revista_string"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="278dp"
+            style="@style/RadioButtonStyle"/>
+
+        <RadioButton
+            android:id="@+id/radioButtonAmbas"
+            android:text="@string/ambas_string"
+            tools:layout_editor_absoluteX="3dp"
+            tools:layout_editor_absoluteY="230dp"
+            style="@style/RadioButtonStyle"/>
+
+    </RadioGroup>
+
+    <ImageButton
+        android:id="@+id/imageButton"
+        android:layout_width="56dp"
+        android:layout_height="94dp"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/buscar_string"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/ic_menu_search" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resultView"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/resultView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/resultado_string"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toTopOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioGroup"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">GoogleBooksClient</string>
+    <string name="book_thumbnail">Book thumbnail</string>
+    <string name="numero_paginas_string">Páginas:</string>
+    <string name="resultado_string">Resultados</string>
+    <string name="cargando_string">Cargando...</string>
+    <string name="nullResultado_string">No hay resultados</string>
+    <string name="buscar_string">Buscar</string>
+    <string name="titulo_string">Título</string>
+    <string name="autor_string">Autor</string>
+    <string name="libro_string">Libro</string>
+    <string name="revista_string">Revista</string>
+    <string name="ambas_string">Ambas</string>
+    <string name="error_text">Introduce título o autor</string>
+    <string name="error_falta_titulo_revista">Introduce el título de la revista</string>
+    <string name="error_sin_conexion_busqueda">Sin conexión a Internet</string>
+</resources>
